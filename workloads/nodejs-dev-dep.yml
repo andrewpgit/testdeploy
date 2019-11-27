@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: nodejs-dev
-        image: andrewpgit/app:dev-3
+        image: andrewpgit/app:dev-4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
