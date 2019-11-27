@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-dev
+  namespace: dev
+  labels:
+    app: nodejs-dev
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: nodejs-dev
+  template:
+    metadata:
+      labels:
+        app: nodejs-dev
+    spec:
+      containers:
+      - name: nodejs-dev
+        image: andrewpgit/app:dev
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        resources:
+          limits:
+            cpu: 1024m
+            memory: 256Mi
+          requests:
+            cpu: 10m
+            memory: 128Mi
