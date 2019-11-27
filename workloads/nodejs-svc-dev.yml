@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejs-dev
+  namespace: dev
+  labels:
+    app: nodejs-dev
+spec:
+  type: ClusterIP
+  selector:
+    app: nodejs-dev
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: http
