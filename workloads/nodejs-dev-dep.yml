@@ -8,7 +8,7 @@ metadata:
     app: nodejs-dev
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.nodejs-dev: semver:~dev-
+    flux.weave.works/tag.nodejs-dev: regexp:^dev-.*
 spec:
   strategy:
     rollingUpdate:
