@@ -5,10 +5,10 @@ metadata:
   name: test-ingress
 spec:
   rules:
-    - host: test.nodejs.ua
-      http:
-        paths:
-          - path: /dev
-            backend:
-              serviceName: nodejs-dev
-              servicePort: 80
+  - host: test.nodejs.ua
+    http:
+      paths:
+        - path: /dev
+          backend:
+            serviceName: nodejs-dev
+            servicePort: 80
