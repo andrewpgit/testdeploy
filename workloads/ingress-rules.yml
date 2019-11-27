@@ -12,7 +12,3 @@ spec:
             backend:
               serviceName: nodejs-dev
               servicePort: 80
-          - path: /stage
-            backend:
-              serviceName: nodejs-stage
-              servicePort: 80
