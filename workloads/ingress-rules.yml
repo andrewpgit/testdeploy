@@ -1,7 +1,7 @@
 kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
-  namespace: ingress-nginx
+  namespace: dev
   name: test-ingress
 spec:
   rules:
