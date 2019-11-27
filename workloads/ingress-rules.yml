@@ -5,7 +5,7 @@ metadata:
   name: test-ingress
 spec:
   rules:
-    - host: test.nodejs.com
+    - host: test.nodejs.ua
       http:
         paths:
           - path: /dev
