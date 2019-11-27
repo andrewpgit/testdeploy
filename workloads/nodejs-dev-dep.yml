@@ -6,6 +6,9 @@ metadata:
   namespace: dev
   labels:
     app: nodejs-dev
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.nodejs-dev: semver:~dev
 spec:
   strategy:
     rollingUpdate:
