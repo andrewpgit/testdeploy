@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejs-production
+  namespace: production
+  labels:
+    app: nodejs-production
+spec:
+  type: ClusterIP
+  selector:
+    app: nodejs-production
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080

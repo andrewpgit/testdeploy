@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-production
+  namespace: production
+  labels:
+    app: nodejs-production
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.nodejs-production: regexp:^master-.*
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: nodejs-production
+  template:
+    metadata:
+      labels:
+        app: nodejs-production
+    spec:
+      containers:
+      - name: nodejs-production
+        image: andrewpgit/app:master-1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        resources:
+          limits:
+            cpu: 1024m
+            memory: 256Mi
+          requests:
+            cpu: 10m
+            memory: 128Mi
