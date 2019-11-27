@@ -8,7 +8,7 @@ metadata:
     app: nodejs-dev
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.nodejs-dev: semver:~dev
+    flux.weave.works/tag.nodejs-dev: semver:~dev-
 spec:
   strategy:
     rollingUpdate:
@@ -24,8 +24,8 @@ spec:
     spec:
       containers:
       - name: nodejs-dev
-        image: andrewpgit/app:dev
-        imagePullPolicy: Always
+        image: andrewpgit/app:dev-1
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
           name: http
