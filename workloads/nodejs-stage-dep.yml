@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: nodejs-stage
-        image: andrewpgit/app:stage-1
+        image: andrewpgit/app:stage-2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
