@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: nodejs-production
-        image: andrewpgit/app:master-1
+        image: andrewpgit/app:master-2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
